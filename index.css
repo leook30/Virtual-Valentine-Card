@@ -1,0 +1,372 @@
+body {
+  background-color: #ffc3da;
+}
+
+
+.envelope-wrapper {
+  height: 380px;
+  position: relative;
+}
+
+
+#envelope {
+  position: relative;
+  height: 180px;
+  width: 280px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  background-color: #ff6863;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#envelope:hover {
+  cursor: pointer;
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+
+ 
+  pointer-events: none;
+}
+
+.flap {
+  border-top: 98px solid #ff6863;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
+  transform-origin: top;
+}
+
+.pocket {
+  border-left: 140px solid #FF8BA0;
+  border-right: 140px solid #FF8BA0;
+  border-bottom: 90px solid #FFA8B5;
+  border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.letter {
+  position: relative;
+  background-color: white;
+  width: 90%;
+  height: 95%;
+  top: 5%;
+  border-radius: 10px;
+  box-shadow: 0 2px 26px rgba(0,0,0,.12);
+  margin-left: auto;
+  margin-right: auto;
+
+  
+  z-index: 10;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.open .letter {
+  transform: translateY(-80px);
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.close .letter {
+  transform: translateY(0);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.heart:before, .heart:after {
+  position: absolute;
+  content: "";
+  background: #d00000;
+  width: 50px;
+  height: 80px;
+  left: 50px;
+  top: 0;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart {
+  opacity: 0;
+  animation: none;
+}
+
+.a1 {
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.a2 {
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.a3 {
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes slideUp {
+  0% { top: 0; }
+  100% { top: -600px; }
+}
+
+@keyframes sideSway{
+  0% { margin-left: 0px; }
+  100% { margin-left: 50px; }
+}
+
+
+.clickable-gif {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+
+.reset {
+  text-align: center;
+}
+
+.reset button,
+.music-controls button {
+  font-weight: 800;
+  font-style: normal;
+  transition: all 0.1s linear;
+  background-color: transparent;
+  border: solid 2px #ff6863;
+  border-radius: 4px;
+  color:#ff6863;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 20px;
+  margin-top: 100px;
+  padding: 10px;
+  line-height: 2em;
+  text-decoration: none;
+  min-width: 150px;
+  outline: none;
+}
+
+.reset button:hover,
+.music-controls button:hover {
+  background-color: #ff6863;
+  cursor: pointer;
+  color: white;
+}
+
+.valentine {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(20, 20, 20);
+  font-size: 70px;
+  margin: 150px;
+}
+
+
+.music-controls {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.music-controls input[type="range"] {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+
+#clickMe {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 220px;              
+  transform: translateX(190px); 
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #d00000;
+  animation: pulse 1s infinite alternate;
+  z-index: 50;
+}
+
+@keyframes pulse {
+  0% { transform: translateX(190px) scale(1); }
+  100% { transform: translateX(190px) scale(1.1); }
+}
+
+
+#fullscreenGif {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: black;
+}
+
+#fullscreenGif video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+#finalMessage {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+#finalMessage .finalText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: center;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.75);
+  padding: 24px;
+  max-width: 90vw;
+}
+
+.heart-bg {
+  position: fixed;
+  bottom: -50px;
+  font-size: 24px;
+  color: rgba(255, 100, 120, 0.7);
+  animation: floatUp 6s linear infinite;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+
+.finalText span {
+  display: block;
+  opacity: 0;
+  animation: fadeLine 1s forwards;
+}
+
+.finalText span:nth-child(1) { animation-delay: 0.3s; }
+.finalText span:nth-child(2) { animation-delay: 1.2s; }
+.finalText span:nth-child(3) { animation-delay: 2.1s; }
+.finalText span:nth-child(4) { animation-delay: 3s; }
+.finalText span:nth-child(5) { animation-delay: 3.9s; }
+.finalText span:nth-child(6) { animation-delay: 4.6s; }
+
+@keyframes fadeLine {
+  to { opacity: 1; }
+}
+@media (max-width: 600px) {
+
+  .valentine {
+    font-size: 32px;
+    margin: 40px 20px;
+  }
+
+
+  #envelope {
+    top: 0;
+    margin-top: 70px;
+  }
+
+  .envelope-wrapper {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  
+  .reset button {
+    margin-top: 30px;
+    min-width: 130px;
+    font-size: 13px;
+  }
+
+  
+  #clickMe {
+    left: 50%;
+    top: 260px;
+    transform: translateX(120px);
+    font-size: 18px;
+  }
+
+ 
+  #finalMessage .finalText {
+    font-size: 12px;       
+    line-height: 1.9;
+    padding: 14px;
+  }
+}

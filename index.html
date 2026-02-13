@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="x-icon" href="corazon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link href="index.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <title>Te Amo mucho Bebu!</title>
+</head>
+
+<body>
+
+
+  <div id="fullscreenGif">
+    <video id="flowersVideo" autoplay muted loop playsinline>
+      <source src="flowers.webm" type="video/webm">
+    </video>
+  </div>
+
+
+  <div id="finalMessage">
+  <div class="finalText">
+  <span>Hola mi princesa hermosa 💕</span>
+  <span>Desde que llegaste a mi vida, todo es más bonito contigo</span>
+  <span>Estás muy linda y me caes bien</span>
+  <span>Eres mi persona favorita en el mundo</span>
+  <span>Gracias por ser mi San Valentín</span>
+  <span>-- Te amo mucho, Leo 💌</span>
+</div>
+  </div>
+
+ 
+  <audio id="bgMusic" src="love-song.mp3" loop></audio>
+  <audio id="yesSound" src="yes.mp3"></audio>
+  <audio id="noSound" src="no.mp3"></audio>
+
+  <div class="envelope-wrapper">
+    <div id="envelope" class="close">
+
+      <div class="front flap"></div>
+      <div class="front pocket"></div>
+
+      <div class="letter">
+        <div class="gif-container">
+          <img src="love.gif" id="loveGif" class="clickable-gif" alt="love gif">
+        </div>
+      </div>
+
+      <div class="hearts">
+        <div class="heart a1"></div>
+        <div class="heart a2"></div>
+        <div class="heart a3"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="clickMe">Click me ❤️</div>
+
+  <div class="reset">
+    <button id="open">Si 💕</button>
+    <button id="reset">No 😭</button>
+  </div>
+
+  <h1 class="valentine">¿Te gustaría ser mi San Valentín?</h1>
+
+
+
+  <script src="index.js"></script>
+</body>
+</html>
